@@ -1,0 +1,18 @@
+{
+  # Keep local development on plain HTTP by default.
+  auto_https off
+}
+
+:80 {
+  handle_path /api/java/* {
+    reverse_proxy backend-java:8080
+  }
+
+  handle_path /api/go/* {
+    reverse_proxy backend-go:8080
+  }
+
+  handle {
+    reverse_proxy frontend:3000
+  }
+}
