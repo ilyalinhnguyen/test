@@ -1,9 +1,4 @@
-{
-  # Keep local development on plain HTTP by default.
-  auto_https off
-}
-
-:80 {
+test-mts.duckdns.org {
   handle_path /api/java/* {
     reverse_proxy backend-java:8080
   }
