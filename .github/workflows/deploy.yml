@@ -39,11 +39,6 @@ jobs:
               exit 1
             fi
 
-            mkdir -p ~/.ssh
-            chmod 700 ~/.ssh
-            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-            chmod 600 ~/.ssh/known_hosts
-
             if [ ! -d "$APP_DIR/.git" ]; then
               mkdir -p "$APP_DIR"
               git clone "$REPO_URL" "$APP_DIR"
